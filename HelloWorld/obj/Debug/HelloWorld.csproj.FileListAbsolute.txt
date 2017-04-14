@@ -30,3 +30,14 @@ C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Helpers.xml
 C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Mvc.xml
 C:\Source\Repos\csharp-230\HelloWorld\obj\Debug\HelloWorld.dll
 C:\Source\Repos\csharp-230\HelloWorld\obj\Debug\HelloWorld.pdb
+C:\Source\Repos\csharp-230\HelloWorld\bin\Newtonsoft.Json.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\Swashbuckle.Core.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\System.Net.Http.Formatting.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Http.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Http.WebHost.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\WebActivatorEx.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\Newtonsoft.Json.xml
+C:\Source\Repos\csharp-230\HelloWorld\bin\System.Net.Http.Formatting.xml
+C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Http.xml
+C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Http.WebHost.xml
+C:\Source\Repos\csharp-230\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache

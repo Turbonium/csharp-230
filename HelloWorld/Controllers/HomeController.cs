@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HelloWorld.Models; // add to access models
+using HelloWorld.Models;
+using Swashbuckle.Application;
+
+// add to access models
 
 namespace HelloWorld.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Products()
         {
             var products = new Product[]
@@ -36,11 +40,17 @@ namespace HelloWorld.Controllers
             return View(myProduct);
         }
 
+        //public ActionResult Error()
+        //{
+        //    return View();
+        //}
+
         // GET: Home
         public ActionResult Index()
         {
-            //int x = 1;  // add me
-            //x = x / (x - 1); // add me
+   
+            int x = 1;  // add me
+            x = x / (x - 1); // add me
             return View();
         }
 
