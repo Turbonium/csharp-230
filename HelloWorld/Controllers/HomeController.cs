@@ -12,45 +12,28 @@ namespace HelloWorld.Controllers
 {
     public class HomeController : Controller
     {
+        //Introduce Dependency injection
+        private IProductRepository productRepository;
+
+        //Constructor
+        public HomeController(IProductRepository productRepository)
+        {
+            this.productRepository = productRepository;
+        }
+
+        public ActionResult Product()
+        {
+            return View(productRepository.Products.First());
+        }
 
         public ActionResult Products()
         {
-            var products = new Product[]
-            {
-            // as part of exercise add a value for Count for each product
-        new Product{ ProductId = 1, Name = "First One", Price = 1.11m, Count = 0},
-        new Product{ ProductId = 2, Name="Second One", Price = 2.22m, Count = 3},
-        new Product{ ProductId = 3, Name="Third One", Price = 3.33m, Count = 1},
-        new Product{ ProductId = 4, Name="Fourth One", Price = 4.44m, Count = 10},
-            };
-
-            return View(products);
+            return View(productRepository.Products);
         }
-        public ActionResult Product()
-        {
-            var myProduct = new Product
-            {
-                ProductId = 1,
-                Name = "Kayak",
-                Description = "A boat for one person",
-                Category = "water-sports",
-                Price = 200m,
-            };
-
-            return View(myProduct);
-        }
-
-        //public ActionResult Error()
-        //{
-        //    return View();
-        //}
 
         // GET: Home
         public ActionResult Index()
         {
-   
-            int x = 1;  // add me
-            x = x / (x - 1); // add me
             return View();
         }
 

@@ -40,4 +40,7 @@ C:\Source\Repos\csharp-230\HelloWorld\bin\Newtonsoft.Json.xml
 C:\Source\Repos\csharp-230\HelloWorld\bin\System.Net.Http.Formatting.xml
 C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Http.xml
 C:\Source\Repos\csharp-230\HelloWorld\bin\System.Web.Http.WebHost.xml
-C:\Source\Repos\csharp-230\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
+C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.Integration.Mvc.dll
+C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.xml
+C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.Integration.Mvc.xml
