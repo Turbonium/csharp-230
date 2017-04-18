@@ -1,0 +1,10 @@
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\SchoolEF.exe.config
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\SchoolEF.exe
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\SchoolEF.pdb
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\EntityFramework.dll
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\EntityFramework.xml
+C:\Source\Repos\csharp-230\SchoolEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Source\Repos\csharp-230\SchoolEF\obj\Debug\SchoolEF.csprojResolveAssemblyReference.cache
+C:\Source\Repos\csharp-230\SchoolEF\obj\Debug\SchoolEF.exe
+C:\Source\Repos\csharp-230\SchoolEF\obj\Debug\SchoolEF.pdb
