@@ -11,7 +11,7 @@ using Swashbuckle.Application;
 namespace HelloWorld.Controllers
 {
     [Logging]
-    [AuthorizeIPAddress]
+    //[AuthorizeIPAddress]
     public class HomeController : Controller
     {
         //Introduce Dependency injection
