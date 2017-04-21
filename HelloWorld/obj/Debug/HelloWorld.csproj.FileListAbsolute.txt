@@ -44,3 +44,4 @@ C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.dll
 C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.Integration.Mvc.dll
 C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.xml
 C:\Source\Repos\csharp-230\HelloWorld\bin\Autofac.Integration.Mvc.xml
+C:\Source\Repos\csharp-230\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
