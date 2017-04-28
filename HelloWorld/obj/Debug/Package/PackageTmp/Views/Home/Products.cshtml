@@ -1,0 +1,48 @@
+﻿@model HelloWorld.Models.Product[]
+@{
+    ViewBag.Title = "Products";
+    //Layout = "~/Views/_BasicLayout.cshtml";
+}
+
+@if (Model.Length > 0) //if array not empty
+{
+    <table>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@string.Format("{0:C}", product.Price)</td>
+                <td><!--you can check on the count using switch or if else statement-->
+                <!--@switch (product.Count) {
+                    case 0: @:Out of stock
+                    break;
+                    case 1: @:Low stock
+                    break;
+                    default:
+                    @:string.Format(etc)
+                    break;
+                    } // switch
+                    -->
+                    @if (product.Count == 0)
+                    {
+                        @:Out of Stock
+                    }
+                    else if (product.Count==1)
+                    {
+                        @: Low Stock
+                    }
+                    else
+                    {
+                        <text>@string.Format("{0} items", product.Count )</text>
+                    }
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+else // if no products available (length ==0)
+{
+    <h2>No product data found.</h2>
+}
