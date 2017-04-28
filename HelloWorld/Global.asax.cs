@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Autofac;
-using Autofac.Integration.Mvc;
-using System.Reflection;
+using System.Reflection; // add this for assembly
+using Autofac; // add
+using Autofac.Integration.Mvc; // add for Autofac
 
 namespace HelloWorld
 {
@@ -17,9 +16,10 @@ namespace HelloWorld
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            RegisterAutofac();
+            RegisterAutofac();//as application starts Autofac gets called
         }
 
+        //Autofac Registeration
         private void RegisterAutofac()
         {
             var builder = new ContainerBuilder();
@@ -36,18 +36,17 @@ namespace HelloWorld
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
 
-        protected void Application_Error()
+        protected void xxApplication_Error() // do xx before doing Cookie
         {
             var exception = Server.GetLastError();
-
             Server.ClearError();
-
             var routeData = new RouteData();
-            routeData.Values.Add("controller", "Error");
+            routeData.Values.Add("controller", "Error"); // modify me
             routeData.Values.Add("action", "Error");
 
-            IController errorController = new Controllers.ErrorController();
+            IController errorController = new Controllers.ErrorController(); //modify me
             errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
         }
+
     }
 }

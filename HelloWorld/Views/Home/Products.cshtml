@@ -1,10 +1,10 @@
-﻿@model IEnumerable<HelloWorld.Models.Product>
+﻿@model HelloWorld.Models.Product[]
 @{
     ViewBag.Title = "Products";
     //Layout = "~/Views/_BasicLayout.cshtml";
 }
 
-@if (Model.Any()) //if array not empty
+@if (Model.Length > 0) //if array not empty
 {
     <table>
         @foreach (var product in Model)

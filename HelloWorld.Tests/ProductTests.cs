@@ -1,14 +1,48 @@
-﻿using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorld.Models;
 using HelloWorld.Controllers;
-using Moq;
+using Moq; // Use a Moq Test
+using System.Linq;
 
 namespace HelloWorld.Tests
 {
     [TestClass]
     public class ProductTests
     {
+        [TestMethod]
+        public void TestMethodWithMoq()
+        {
+            var mockProductRepository = new Mock<IProductRepository>();
+
+            mockProductRepository
+                .SetupGet(t => t.Products)
+                .Returns(
+                    () =>
+                    {
+                        return new Product[]{
+                            new Product{ Name="Baseball", Price = 11},
+                            new Product{ Name="Football", Price = 8},
+                            new Product{ Name="Tennis ball", Price = 13} ,
+                            new Product{ Name="Golf ball", Price=3},
+                            new Product{ Name="ping pong ball", Price = 12},
+                        };
+                    }
+                 );
+
+            // Arrange
+            var controller = new HomeController(mockProductRepository.Object);
+
+            // Act
+            var result = controller.Products();
+
+            // Assert
+            var products = (Product[])((System.Web.Mvc.ViewResultBase)(result)).Model;
+            Assert.AreEqual(5, products.Length, "Length is invalid");
+            // the check for the price
+            Assert.AreEqual(3, products.Where(t => t.Price > 10).Count(), "We should have 3 products > $10");
+            Assert.AreEqual(2, products.Where(t => t.Price < 10).Count(), "We should have 2 products < $10");
+        }
+
         [TestMethod]
         public void TestMethodWithFakeClass()
         {
@@ -20,37 +54,7 @@ namespace HelloWorld.Tests
 
             // Assert
             var products = (Product[])((System.Web.Mvc.ViewResultBase)(result)).Model;
-            Assert.AreEqual(4, products.Length, "Length is invalid");
-        }
-
-        [TestMethod]
-        public void TestMethodWithMoq()
-        {
-            var mockProductRepository = new Mock<IProductRepository>();
-            mockProductRepository
-                .SetupGet(t => t.Products)
-                .Returns(() =>
-                {
-                    return new Product[]{
-                    new Product{ ProductId=101, Name="Baseball", Description="balls", Price=11.00m},
-                    new Product{ ProductId=102, Name="Football", Description="nfl", Price=8.00m},
-                    new Product{ ProductId=102, Name="Tennis Ball", Description="balls", Price=13.00m},
-                    new Product{ ProductId=102, Name="Golf Ball", Description="balls", Price=3.00m},
-                    new Product{ ProductId=102, Name="Ping Pong Ball", Description="balls", Price=12.00m}
-                    };
-                });
-
-            // Arrange
-            var controller = new HomeController(mockProductRepository.Object);
-
-            // Act
-            var result = controller.Products();
-
-            // Assert
-            var products = (Product[])((System.Web.Mvc.ViewResultBase)(result)).Model;
-            Assert.AreEqual(5, products.Length, "Length is invalid");
-            Assert.AreEqual(3, products.Count(p=> p.Price > 10), "Less than 3 products found with a price of 10 or more");
-            Assert.AreEqual(2, products.Count(p=> p.Price < 10), "More than 2 products found with a price of 10 or less");
+            Assert.AreEqual(5, products.Length);
         }
     }
 }

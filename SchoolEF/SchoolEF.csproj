@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6832A168-82BA-4584-89D3-C1E3E618A4F5}</ProjectGuid>
+    <ProjectGuid>{A29EFF73-C950-4843-B11C-3ECAE04442D4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SchoolEF</RootNamespace>
