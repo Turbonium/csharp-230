@@ -17,10 +17,10 @@ namespace HelloWorld
             {
                 var items = new[]
                 {
-                    new User{ Id=100, Email="admin", Password="admin"},
-                    new User{ Id=101, Email="mike", Password="mike"},
-                    new User{ Id=102, Email="dave", Password="dave"},
-                    new User{ Id=103, Email="lisa", Password="lisa"},
+                    new User{ Id=100, Email="admin", Password="admin", IsAdmin = true},
+                    new User{ Id=101, Email="mike", Password="mike1", IsAdmin = false},
+                    new User{ Id=102, Email="dave", Password="dave", IsAdmin = false},
+                    new User{ Id=103, Email="lisa", Password="lisa", IsAdmin = false},
                 };
                 return items;
             }

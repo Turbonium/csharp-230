@@ -15,6 +15,7 @@ namespace HelloWorld.Controllers
     {
         //Security
         [Authorize]
+        [IsAdministrator]
         public ActionResult Notes()
         {
             return View();
@@ -64,6 +65,8 @@ namespace HelloWorld.Controllers
         public ActionResult Logoff()
         {
             Session["UserName"] = null;
+            Session["User"] = null;
+            System.Web.Security.FormsAuthentication.SignOut();
             return RedirectToAction("Index");
         }
 

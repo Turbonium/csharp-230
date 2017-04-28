@@ -16,6 +16,7 @@ namespace HelloWorld.Controllers
 
         public ActionResult LogOut()
         {
+            Session["User"] = null;
             System.Web.Security.FormsAuthentication.SignOut();
             return Redirect("~/");
         }
@@ -31,8 +32,10 @@ namespace HelloWorld.Controllers
             if (ModelState.IsValid)
             {
                 var user = userRepository.LogIn(model.UserName, model.Password);
+
                 if (user != null)
                 {
+                    Session["User"] = user;
                     System.Web.Security.FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return Redirect(returnUrl);
                 }
